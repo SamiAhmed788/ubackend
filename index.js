@@ -18,7 +18,7 @@ dbConnection();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({  
-    origin: 'http://localhost:5173', // Replace with your frontend origin
+    origin:'http://localhost:5173', // Replace with your frontend origin
     credentials: true,
 }));
 app.get("/",(req,res)=>{
