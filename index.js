@@ -18,17 +18,17 @@ dbConnection();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({  
-    origin:'http://localhost:5173', // Replace with your frontend origin
+    origin:'https://ubackend.vercel.app', // Replace with your frontend origin
     credentials: true,
 }));
 app.get("/",(req,res)=>{
     res.send("Hello world")
 })
-// app.use((req, res, next) => {
-//     res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-//     res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-//     next();
-//   });
+app.use((req, res, next) => {
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+    next();
+  });
 // Route setup
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
