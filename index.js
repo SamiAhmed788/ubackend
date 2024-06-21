@@ -18,7 +18,7 @@ dbConnection();
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({  
-    origin:'https://ubackend.vercel.app', // Replace with your frontend origin
+    origin:'https://u-tube-six.vercel.app', // Replace with your frontend origin
     credentials: true,
 }));
 app.get("/",(req,res)=>{
